@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [VoteController::class, 'showAll']);
+
+Route::get('/vote/create', function() {
+  return view('create_vote');
 });
+
+Route::post('/vote/create', [VoteController::class, 'create']);
+
+Route::get('/vote/show/{id}', [VoteController::class, 'showVote']);
+
+Route::get('/vote/positive_inc/{id}', [VoteController::class, 'increasePositive']);
+
+Route::get('/vote/negative_inc/{id}', [VoteController::class, 'increaseNegative']);

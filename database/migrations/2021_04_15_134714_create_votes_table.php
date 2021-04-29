@@ -19,6 +19,7 @@ class CreateVotesTable extends Migration
             $table->text('text');
             $table->integer('positive');
             $table->integer('negative');
+            $table->string('img');
             $table->timestamps();
         });
     }

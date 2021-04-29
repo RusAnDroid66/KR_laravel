@@ -51,11 +51,15 @@
 			<h1>Открыть голосование</h1>
 			<hr class="mb-4">
 
-			<form method="POST">
+			<form method="POST" enctype="multipart/form-data">
 				@csrf
 				<div class="form-group">
 					<label>Заголовок</label>
 					<input type="text" class="form-control" name="title">
+				</div>
+				<div class="form-group">
+					<label>Картинка</label>
+					<input type="file" class="form-control-file" name="img">
 				</div>
 				<div class="form-group">
 					<label>Текст описания</label>

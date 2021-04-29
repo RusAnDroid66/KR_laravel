@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
 	<!-- Заголовок вкладки -->
-	<title>Голосование - Уточек программистам</title>
+	<title>Голосование - {{ $vote->title }}</title>
 </head>
 
 <body>
@@ -48,6 +48,8 @@
 	<main class="mt-5">
 		<div class="container">
 
+			<div class="mb-3" style="background-image: url('{{ $vote->img }}'); height: 400px; background-position: 0 0; background-size: cover;">
+			</div>
 			<h1>{{ $vote->title }}</h1>
 			<hr>
 

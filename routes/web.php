@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\VoteController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,16 +15,15 @@ use App\Http\Controllers\VoteController;
 |
 */
 
-Route::get('/', [VoteController::class, 'showAll']);
-
-Route::get('/vote/create', function() {
-  return view('create_vote');
+Route::get('/', function(){
+  return view('spa');
 });
 
-Route::post('/vote/create', [VoteController::class, 'create']);
+Route::post('/book/add', [BookController::class, 'add']);
 
-Route::get('/vote/show/{id}', [VoteController::class, 'showVote']);
+Route::get('/book/all', [BookController::class, 'all']);
 
-Route::get('/vote/positive_inc/{id}', [VoteController::class, 'increasePositive']);
+Route::get('/book/delete/{id}', [BookController::class, 'delete']);
 
-Route::get('/vote/negative_inc/{id}', [VoteController::class, 'increaseNegative']);
+Route::get('/book/change_availabilty/{id}', [BookController::class, 'changeAvailabilty']);
+
